@@ -1,3 +1,4 @@
+import br.com.guru.screenmatchdesafios.aluno.Aluno;
 import br.com.guru.screenmatchdesafios.calculadora.Calculadora;
 import br.com.guru.screenmatchdesafios.carro.Carro;
 import br.com.guru.screenmatchdesafios.musica.Musica;
@@ -41,7 +42,11 @@ public class Main {
 
         System.out.println("\n**************************** \n ");
 
+        Aluno aluno = new Aluno();
+        aluno.setNome("Guruzinho");
+        aluno.setIdade(19);
+        aluno.exibirInformacoes();
 
-
+        System.out.println("\n**************************** \n ");
     }
 }
