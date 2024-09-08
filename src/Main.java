@@ -9,12 +9,16 @@ import br.com.guru.screenmatchdesafios.carro.ModeloCarro;
 import br.com.guru.screenmatchdesafios.contabancaria.ContaBancaria;
 import br.com.guru.screenmatchdesafios.contabancaria.ContaCorrente;
 import br.com.guru.screenmatchdesafios.conversormoedas.ConversorMoedas;
+import br.com.guru.screenmatchdesafios.desafio.Classificacao;
+import br.com.guru.screenmatchdesafios.desafio.Musicas;
+import br.com.guru.screenmatchdesafios.desafio.Podcasts;
 import br.com.guru.screenmatchdesafios.idadepessoa.IdadePessoa;
 import br.com.guru.screenmatchdesafios.livro.Livro;
 import br.com.guru.screenmatchdesafios.musica.Musica;
 import br.com.guru.screenmatchdesafios.pessoa.Pessoa;
 import br.com.guru.screenmatchdesafios.produto.Produto;
 import br.com.guru.screenmatchdesafios.tabuada.TabuadaMultiplicacao;
+import br.com.guru.screenmatchdesafios.temperatura.ConversorTemperaturaPadrao;
 
 public class Main {
     public static void main(String[] args) {
@@ -135,6 +139,59 @@ public class Main {
         TabuadaMultiplicacao tabuadaMultiplicacao = new TabuadaMultiplicacao();
         tabuadaMultiplicacao.mostrarTabuada(5);
 
+        System.out.println("\n**************************** \n ");
+
+        ConversorTemperaturaPadrao conversorTemperaturaPadrao = new ConversorTemperaturaPadrao();
+        conversorTemperaturaPadrao.celsiusParaFahrenheit(5);
+        conversorTemperaturaPadrao.fahrenheitParaCelsius(27);
+
+        System.out.println("\n**************************** \n ");
+
+        produto.calcularPrecoFinal(10);
+        produto.aplicarDesconto(0.10);
+
+        System.out.println("\n**************************** \n ");
+
+        Musicas musicas = new Musicas();
+        musicas.setTitulo("Música do Guru");
+        musicas.setAlbum("White Guru");
+        musicas.setCantor("Guru");
+        musicas.setGenero("Rock");
+        musicas.setDuracao(5);
+
+        for (int i = 0; i < 500; i++) {
+            musicas.curtir();
+        }
+
+        for (int i = 0; i < 900; i++) {
+            musicas.reproduzir();
+        }
+
+        System.out.println("Números de Curtidas da Música: " + musicas.getCurtidas());
+        System.out.println("Números de Reproduções da Música: " + musicas.getTotalReproducoes());
+
+        Podcasts podcasts = new Podcasts();
+        podcasts.setTitulo("Podcasts do Guru");
+        podcasts.setApresentador("Guru do Himalaia");
+        podcasts.setDescricao("Mistérios da Vida");
+        podcasts.setDuracao(2);
+
+        for (int i = 0; i < 100; i++) {
+            podcasts.curtir();
+        }
+
+        for (int i = 0; i < 700; i++) {
+            podcasts.reproduzir();
+        }
+
+        System.out.println("\nNúmeros de Curtidas do Podcast: " + podcasts.getCurtidas());
+        System.out.println("Números de Reproduções da Podcast: " + podcasts.getTotalReproducoes());
+
+        System.out.println("\n**************************** \n ");
+
+        Classificacao classificacao = new Classificacao();
+        classificacao.getAvaliacao(musicas);
+        classificacao.getAvaliacao(podcasts);
 
     }
 }
